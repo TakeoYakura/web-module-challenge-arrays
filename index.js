@@ -105,10 +105,9 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 //1 parameter array
-function removeLastFlavor(/*your code here*/){
-  /*your code here*/
-  //use .pop
-  //return array
+function removeLastFlavor(array){
+  array.pop()
+  return array
 }
 
 
@@ -124,9 +123,8 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 //2 parameters array,index
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
-  //return array[index]
+function getFlavorByIndex(array, index){
+  return array[index]
 }
 
 
@@ -145,12 +143,14 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 //2parameters array,index
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
-  //loop through array 
-  //write conditional checks to see if index matches given flavor if it does remove it
-  //outside of loop return array
-
+function removeFlavorByName(array, index){
+  
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === index){
+      array.splice(i,1);
+    }
+  }
+  return array
 }
 
 
@@ -175,13 +175,15 @@ Use the filterByWord function below to do the following:
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 //2 parameters array, string
-function filterByWord(/*your code here*/){
+function filterByWord(array,string){
   /*your code here*/
-  //create new array called filteredArray
-  //loop through original array check each item
-  //if item includes string push to filtered array
-
-  //outside for loop return filtered array
+  const filteredArray = []
+  for(let i = 0; i < array.length; i++){
+    if(array[i].includes(string)){
+      filteredArray.push(array[i]);
+    }
+  }
+  return filteredArray
 }
 
 
